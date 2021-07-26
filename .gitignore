@@ -1,0 +1,5 @@
+.cert/
+.git/
+node_modules/
+.cache/
+dist/

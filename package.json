@@ -1,0 +1,15 @@
+{
+  "name": "example-app-sdk-vanilla",
+  "version": "1.0.0",
+  "description": "Example app using sdk for basic use",
+  "main": "index.js",
+  "scripts": {
+    "start": "ws -d public -p 1234 --cors.origin null --cors.credentials --cert ./.cert/cert.pem --key ./.cert/key.pem"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "local-web-server": "^5.0.0"
+  }
+}
