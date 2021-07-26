@@ -15,11 +15,11 @@ Example app using sdk for basic use
 - [x] With no JavaScript framework, just create the most basic HTML, JS and CSS SPA with no dependencies other than the Core JS SDK (no FRUI) and Twitter Bootstrap (TBS) or an equivalent for default styling
 - [x] Dependencies are just imported via old-school script and style tags; just use the single, built file from the SDK repo
 - [x] The app renders a basic username-password form with default styling from TBS
-- [] Upon submission of the form, plain JS catches the form submission event and uses the value off of the event target to submit them with the SDK's FRAuth to AM.
+- [x] Upon submission of the form, plain JS catches the form submission event and uses the value off of the event target to submit them with the SDK's FRAuth to AM.
 
-- [] Handles a success or failure of login, rendering some kind of basic message to user
-- [] Once logged in, display a functional logout button that uses the SessionManager to logout the user
-- [] Once logged out, display the same login form from above
+- [x] Handles a success or failure of login, rendering some kind of basic message to user
+- [x] Once logged in, display a functional logout button that uses the SessionManager to logout the user
+- [x] Once logged out, display the same login form from above
  
 - [ ] Add an OAuth flow to the basic username-password from above:
 - [ ] After successful login, use the SDK's getTokens to call an OAuth client to get access token and id token

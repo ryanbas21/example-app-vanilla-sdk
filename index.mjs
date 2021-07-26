@@ -48,7 +48,6 @@ window.addEventListener('unload', () => {
 function nextStep(step) {
   console.log('step: ', step);
   // Get the next step using the FRAuth API
-  debugger;
   forgerock.FRAuth.next(step).then(handleStep).catch(handleFatalError);
 }
 
@@ -82,11 +81,9 @@ const handlers = {
 
 const getStage = (step) => {
   // Check if the step contains callbacks for capturing username and password
-  debugger;
   const usernameCallbacks = step.getCallbacksOfType('NameCallback');
   const passwordCallbacks = step.getCallbacksOfType('PasswordCallback');
   
-  debugger;
   if (usernameCallbacks.length && passwordCallbacks.length) {
     return "UsernamePassword";
   }
@@ -104,13 +101,19 @@ function handleStep (step) {
     switch (step.type) {
         case 'LoginSuccess':
 	    //after login get tokens
-	    const tokens = forgerock.TokenManager.getTokens({ forceRenew: true });
-	    const user = forgerock.UserManager.getCurrentUser();
-	    
-	    window.location.replace('https://ryan.example.com:1234/success.html');
-	    document.getElementById('tokens').innerHTML = JSON.stringify({ tokens, user })
+	    try {
+	      forgerock.TokenManager.getTokens({ forceRenew: true })
+		.then(token => token)
+		.then(tokens => 
+		  forgerock.UserManager.getCurrentUser()
+		    .then(user => ({ user, tokens }))
+		  )
+		.then(({ user, tokens }) => {
+		  window.location.replace(`https://ryan.example.com:1234/success.html?tokens=${tokens}&user=${user}`);
+	      });
+	    } catch(err) {
+	    }
 	    return;
-	    
 
         case 'LoginFailure':
             handlers['Error'](step);
