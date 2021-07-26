@@ -10,11 +10,11 @@ Example app using sdk for basic use
 - [x] Write Hello, World!
 - [x] Create a README that tracks your progress
 
-- [] At each milestone, commit your progress and link the commit to the progress statement on the README
-- [] Create the most basic username-password SPA with the following requirements:
-- [] With no JavaScript framework, just create the most basic HTML, JS and CSS SPA with no dependencies other than the Core JS SDK (no FRUI) and Twitter Bootstrap (TBS) or an equivalent for default styling
-- [] Dependencies are just imported via old-school script and style tags; just use the single, built file from the SDK repo
-- [] The app renders a basic username-password form with default styling from TBS
+- [x] At each milestone, commit your progress and link the commit to the progress statement on the README
+- [x] Create the most basic username-password SPA with the following requirements:
+- [x] With no JavaScript framework, just create the most basic HTML, JS and CSS SPA with no dependencies other than the Core JS SDK (no FRUI) and Twitter Bootstrap (TBS) or an equivalent for default styling
+- [x] Dependencies are just imported via old-school script and style tags; just use the single, built file from the SDK repo
+- [x] The app renders a basic username-password form with default styling from TBS
 - [] Upon submission of the form, plain JS catches the form submission event and uses the value off of the event target to submit them with the SDK's FRAuth to AM.
 
 - [] Handles a success or failure of login, rendering some kind of basic message to user

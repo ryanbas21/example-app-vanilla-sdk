@@ -4,12 +4,15 @@
   "description": "Example app using sdk for basic use",
   "main": "index.js",
   "scripts": {
-    "start": "ws -d public -p 1234 --cors.origin null --cors.credentials --cert ./.cert/cert.pem --key ./.cert/key.pem"
+    "start": "ws -d -p 1234 --cors.origin null --cors.credentials --cert ./.cert/cert.pem --key ./.cert/key.pem"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "local-web-server": "^5.0.0"
+  },
+  "dependencies": {
+    "@forgerock/javascript-sdk": "^3.0.0"
   }
 }
