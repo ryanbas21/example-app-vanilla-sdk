@@ -14,11 +14,8 @@ forgerock.Config.set({
 
 const logoutHandler = (e) => {
     e.preventDefault(); 
-    console.log('here');
-    return forgerock.SessionManager.logout().then(v => {
-      console.log('in then', v);
-      if (v.ok === true)
-	window.location.replace('https://ryan.example.com:1234/');
+    return forgerock.FRUser.logout().then(() => {
+      window.location.replace('https://ryan.example.com:1234/');
     })
   }
 
