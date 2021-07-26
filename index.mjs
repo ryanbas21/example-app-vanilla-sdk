@@ -106,10 +106,13 @@ function handleStep (step) {
 		.then(token => token)
 		.then(tokens => 
 		  forgerock.UserManager.getCurrentUser()
-		    .then(user => ({ user, tokens }))
+		    .then(user => 
+		      forgerock.OAuth2Client.getUserInfo()
+			.then(info => ({ info, user, tokens }))
+		      )
 		  )
-		.then(({ user, tokens }) => {
-		  window.location.replace(`https://ryan.example.com:1234/success.html?tokens=${tokens}&user=${user}`);
+		.then(({ user, tokens, info }) => {
+		  window.location.replace(`https://ryan.example.com:1234/success.html?tokens=${JSON.stringify(tokens)}&user=${JSON.stringify(user)}&info=${JSON.stringify(info)}`);
 	      });
 	    } catch(err) {
 	    }

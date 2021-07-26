@@ -23,6 +23,6 @@ Example app using sdk for basic use
  
 - [x] Add an OAuth flow to the basic username-password from above:
 - [x] After successful login, use the SDK's getTokens to call an OAuth client to get access token and id token
-- [x] After getting tokens, use the SDK's getUserInfo to call the userinfo endpoint
+- [x] After getting tokens, ushttps://bundlephobia.com/package/@forgerock/javascript-sdk@2.1.0e the SDK's getUserInfo to call the userinfo endpoint
 - [x] Render user info to screen
 - [x] Using the logout button from the previous task, refactor to use FRUser to logout both session and OAuth tokens
