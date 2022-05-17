@@ -10,7 +10,7 @@ forgerock.Config.set({
       timeout: 5000
     },
     realmPath: 'alpha',
-    tree: 'sdkAuthenticationTree', //sdkAuthenticationTree
+    tree: 'embededlogin', //sdkAuthenticationTree
 });
 
 /*
@@ -26,20 +26,10 @@ function handleFatalError(err) {
  * Event setup and cleanup on form
  */
 window.addEventListener("load", () => {
-  const form = document.getElementById('my-form');
   nextStep();
-
-  // const nameCallback = step.getCallbackOfType('NameCallback');
-  // const passwordCallback = step.getCallbackOfType('PasswordCallback');
-  // nameCallback.setName(document.querySelector('input[type=text]').value);
-  // passwordCallback.setPassword(document.querySelector('input[type=password]').value);
-
-  form.addEventListener('submit', interceptForm);
 });
 
 window.addEventListener('unload', () => {
-  const form = document.getElementById('my-form');
-  form.removeEventListener('submit', interceptForm, false);
 });
 
 /*
@@ -92,9 +82,6 @@ const getStage = (step) => {
 };
 
 
-
-
-
 function handleStep (step) {
     if (!step.type) return;
 
@@ -111,8 +98,8 @@ function handleStep (step) {
 			.then(info => ({ info, user, tokens }))
 		      )
 		  )
-		.then(({ user, tokens, info }) => {
-		  window.location.replace(`https://ryan.example.com:1234/success.html?tokens=${JSON.stringify(tokens)}&user=${JSON.stringify(user)}&info=${JSON.stringify(info)}`);
+		.then(() => {
+		  window.location.replace(`https://ryan.example.com:1234/success.html`);
 	      });
 	    } catch(err) {
 	    }

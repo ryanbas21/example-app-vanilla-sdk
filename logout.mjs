@@ -19,10 +19,7 @@ const logoutHandler = (e) => {
     })
   }
 
-const urlSearchParams = new URLSearchParams(location.search);
-const params = Object.fromEntries(urlSearchParams.entries());
-
-document.getElementById('user-info').innerHTML = params.user 
+// document.getElementById('user-info').innerHTML = data.accessToken
 
 const logout = document.getElementById('logout')
 logout.addEventListener('click', logoutHandler);
